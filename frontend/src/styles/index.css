@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #030014;
+
+  --color-light-100: #cecefb;
+  --color-light-200: #a8b5db;
+
+  --color-gray-100: #9ca4ab;
+
+  --color-dark-100: #0f0d23;
+
+  --font-dm-sans: DM Sans, sans-serif;
+
+  --breakpoint-xs: 480px;
+
+  --background-image-hero-pattern: url("/hero-bg.png");
+}
+
+@layer base {
+  body {
+    font-family: "DM Sans", serif;
+    font-optical-sizing: auto;
+    /*background: #16295c;*/
+  }
+
+  h2 {
+    @apply mt-2 mx-3 text-center sm:text-[20px] sm:leading-[30px];
+  }
+
+  main {
+    @apply flex flex-col min-h-screen;
+  }
+}
+
+@layer components {
+  .nav {
+    @apply p-4 mt-auto;
+
+    & ul {
+      @apply flex flex-row justify-center gap-5;
+    }
+  }
+
+  .home {
+    @apply flex flex-col items-center mt-25;
+
+    & .box {
+      @apply flex flex-col justify-center rounded-3xl mt-7 p-30 shadow-2xl mx-auto;
+    }
+  }
+
+  .start {
+    @apply text-2xl cursor-pointer text-center px-4 py-3 rounded-lg bg-pink-400;
+  }
+
+  .point {
+    @apply cursor-pointer
+  }
+
+  .logo {
+    @apply flex flex-row mt-10 mx-10;
+
+    & img {
+      @apply flex w-18 h-18;
+    }
+
+  }
+
+    .question {
+    @apply flex flex-col items-center  mt-10;
+
+    & .box {
+      @apply flex-col max-w-1/2 text-center rounded-3xl p-20 shadow-2xl mx-auto;
+    }
+
+    & .btns {
+      @apply cursor-pointer mt-10 mx-40 py-2 px-3 shadow-2xl bg-white rounded-2xl
+    }
+  }
+
+  .stopwatch {
+    @apply flex flex-col items-center text-3xl font-bold text-red-500 mb-5
+  }
+
+    .scoreboard {
+    @apply flex justify-between w-1/3 p-4 rounded-lg shadow-2xl mb-2
+  }
+
+  .scorer-btn {
+    @apply mt-15 px-6 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-700 transition
+  }
+}
+
+

@@ -1,0 +1,22 @@
+{
+  "name": "quiz-app",
+  "version": "1.0.0",
+  "main": "backend/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npx electron backend/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "electron": "^34.3.0",
+    "express": "^4.21.2",
+    "ip": "^2.0.1",
+    "sqlite3": "^5.1.7",
+    "xml2js": "^0.6.2"
+  }
+}

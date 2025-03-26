@@ -1,0 +1,18 @@
+<root>
+  <contestant>
+    <name>Group A</name>
+    <score>0</score>
+  </contestant>
+  <contestant>
+    <name>Group B</name>
+    <score>0</score>
+  </contestant>
+  <contestant>
+    <name>Group C</name>
+    <score>0</score>
+  </contestant>
+  <contestant>
+    <name>Group D</name>
+    <score>0</score>
+  </contestant>
+</root>
