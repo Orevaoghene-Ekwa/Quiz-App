@@ -1,18 +1,62 @@
 <root>
   <contestant>
-    <name>Group A</name>
+    <name>Oka 4</name>
     <score>0</score>
   </contestant>
   <contestant>
-    <name>Group B</name>
+    <name>Okoh</name>
     <score>0</score>
   </contestant>
   <contestant>
-    <name>Group C</name>
+    <name>Uwasota</name>
     <score>0</score>
   </contestant>
   <contestant>
-    <name>Group D</name>
+    <name>Uniben/Ubth</name>
+    <score>0</score>
+  </contestant>
+    <contestant>
+    <name>Enerhen</name>
+    <score>0</score>
+  </contestant>
+    <contestant>
+    <name>Deco Road</name>
+    <score>0</score>
+  </contestant>
+    <contestant>
+    <name>Akengbuda</name>
+    <score>0</score>
+  </contestant>
+    <contestant>
+    <name>Ezoti</name>
+    <score>0</score>
+  </contestant>
+    <contestant>
+    <name>Iduowina</name>
+    <score>0</score>
+  </contestant>
+    <contestant>
+    <name>Uselu</name>
+    <score>0</score>
+  </contestant>
+    <contestant>
+    <name>MMWay</name>
+    <score>0</score>
+  </contestant>
+    <contestant>
+    <name>Sapele Road</name>
+    <score>0</score>
+  </contestant>
+    <contestant>
+    <name>Ologbo</name>
+    <score>0</score>
+  </contestant>
+  <contestant>
+    <name>Iguosa</name>
+    <score>0</score>
+  </contestant>
+    <contestant>
+    <name>Mariere</name>
     <score>0</score>
   </contestant>
 </root>

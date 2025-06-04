@@ -14,7 +14,7 @@ export const IP = (req, res) => {
             net[i].forEach((iface) => {
                 // Only consider IPv4 addresses and ignore internal (loopback) addresses
                 if (iface.family === 'IPv4' && !iface.internal) {
-                    ips += `${i}: ${iface.address}\n`;
+                    ips += `${i}: ${iface.address}:`;
                 }
             });
         }
@@ -25,7 +25,7 @@ export const IP = (req, res) => {
     } finally {
         // Send response with IP and port
         res.setHeader('Content-Type', 'text/plain');
-        res.end(ips + ' port:' + port);
+        res.end(ips + port);
     }
 
     // try{

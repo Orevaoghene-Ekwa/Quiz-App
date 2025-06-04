@@ -1,7 +1,7 @@
 import axios from "axios";
 import { create } from "zustand";
 
-const API_URL = "http://localhost:3000/api"
+const API_URL = "http://192.168.1.43:3000/api"
 
 export const useAuthStore = create((set) => ({
     ip: "",
