@@ -9,6 +9,7 @@ export const useAuthStore = create((set) => ({
     qids: [],
     answeredQuestions: [],
     currentQuestion: [],
+    quizMaster: [],
     profiles: [],
 
     getIp: async () => {
@@ -70,5 +71,14 @@ export const useAuthStore = create((set) => ({
       } catch (error) {
         console.error(error);
       }
-    }
+    },
+
+    getCurrentQuestion: async () => {
+      try {
+        const res = await axios.get(`${API_URL}/currentQuestion`);
+        set({ quizMaster: res.data });
+      } catch (error) {
+        console.error(error);
+      }
+    },
 }));

@@ -37,6 +37,16 @@ let sql2 = `CREATE TABLE IF NOT EXISTS contestants (
     score INTEGER NOT NULL
 );`;
 
+let sql4 = `CREATE TABLE IF NOT EXISTS currentQuestion (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    question TEXT NOT NULL DEFAULT 'Awaiting for question...',
+    answer TEXT NOT NULL DEFAULT 'Awaiting for answer...'
+);`;
+
+let sql5 = `INSERT INTO currentQuestion (question, answer)
+  SELECT 'Awaiting question', 'Awaiting answer'
+  WHERE NOT EXISTS (SELECT 1 FROM currentQuestion);`;
+
 
 db.run(sql, [], (err) => {
   if (err) {
@@ -53,6 +63,24 @@ db.run(sql2, [], (err) => {
     return;
   } else {
     console.log("contestants table created.");
+  }
+});
+
+db.run(sql4, [], (err) => {
+  if (err) {
+    console.error(err.message);
+    return;
+  } else {
+    console.log("currentQuestion table created.");
+  }
+});
+
+db.run(sql5, [], (err) => {
+  if (err) {
+    console.error(err.message);
+    return;
+  } else {
+    console.log("currentQuestion table Initialised.");
   }
 });
 

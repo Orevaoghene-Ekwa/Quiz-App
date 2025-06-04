@@ -2,6 +2,7 @@ import express from "express";
 import {
   getAllQuestions,
   getAnsweredQuestions,
+  getCurrentQuestion,
   getQuestionById,
   resetAnsweredQuestions,
   updateAnsweredQuestions,
@@ -22,5 +23,6 @@ router.delete("/answered/reset", resetAnsweredQuestions);
 router.get("/ip", IP);
 router.get("/profiles", getProfiles);
 router.post("/score", updateScore);
+router.get("/currentQuestion", getCurrentQuestion);
 
 export default router;

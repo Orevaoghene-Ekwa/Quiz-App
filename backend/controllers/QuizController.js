@@ -36,6 +36,10 @@ export const getQuestionById = async (req, res) => {
     if (!question) {
       return res.status(404).json({ error: "Question not found" });
     }
+    // Update current question in the currentQuestion table
+    await query_run(
+      `UPDATE currentQuestion SET question = '${question.question}', answer = '${question.answer}' WHERE id = 1`
+    );
     res.status(200).json({ question: question });
   } catch (error) {
     console.error(error);
@@ -49,6 +53,19 @@ export const getAnsweredQuestions = async (req, res) => {
     const answered = await query("SELECT id from questions WHERE clicked = 'true'");
     const answeredIds = answered.map(q => q.id);
     res.status(200).json({ answered: answeredIds });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export const getCurrentQuestion = async (req, res) => {
+  try {
+    const currentQuestion = await query("SELECT * FROM currentQuestion");
+    if (!currentQuestion) {
+      return res.status(404).json({ error: "No current question found" });
+    }
+    res.status(200).json({ currentQuestion: currentQuestion });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: error.message });
