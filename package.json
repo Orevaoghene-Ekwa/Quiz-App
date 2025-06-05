@@ -4,7 +4,7 @@
   "main": "backend/main.js",
   "type": "module",
   "scripts": {
-    "dev": "npx electron backend/main.js"
+    "start": "npx electron backend/main.js"
   },
   "keywords": [],
   "author": "",

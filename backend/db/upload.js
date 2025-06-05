@@ -73,9 +73,8 @@ db.run(sql4, [], (err) => {
   } else {
     console.log("currentQuestion table created.");
   }
-});
 
-db.run(sql5, [], (err) => {
+  db.run(sql5, [], (err) => {
   if (err) {
     console.error(err.message);
     return;
@@ -83,6 +82,9 @@ db.run(sql5, [], (err) => {
     console.log("currentQuestion table Initialised.");
   }
 });
+});
+
+
 
 
 function query_run(q) {

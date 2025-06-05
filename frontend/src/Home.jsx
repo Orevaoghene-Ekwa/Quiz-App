@@ -3,10 +3,10 @@ import { useAuthStore } from "./store/authStore";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const { getIp, ip, getAllQuestions } = useAuthStore();
+  const { getIp, ip, getAllQuestions, resetQuiz } = useAuthStore();
   const navigate = useNavigate();
 
-    const handleClick = async () => {
+  const handleClick = async () => {
     try {
       await getAllQuestions();
       navigate("/presenter");
@@ -14,6 +14,15 @@ const Home = () => {
       console.error(error);
     }
   };
+
+  const handleReset = async () => {
+    try {
+      await resetQuiz();
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   useEffect(() => {
     getIp();
@@ -31,6 +40,7 @@ const Home = () => {
             : "Unable to establish connection with server"}
         </p>
       </div>
+      <button className="mt-2 cursor-pointer" onClick={handleReset}>Reset</button>
     </div>
   );
 };

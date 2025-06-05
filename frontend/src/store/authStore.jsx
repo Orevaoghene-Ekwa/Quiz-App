@@ -81,4 +81,13 @@ export const useAuthStore = create((set) => ({
         console.error(error);
       }
     },
+
+    resetQuiz: async () => {
+      try {
+        await axios.get(`${API_URL}/reset`);
+        set({ answeredQuestions: [], currentQuestion: [] });
+      } catch (error) {
+        console.error(error);
+      }
+    },
 }));

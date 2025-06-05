@@ -73,9 +73,11 @@ export const getCurrentQuestion = async (req, res) => {
 };
 
 // Reset answered questions
-export const resetAnsweredQuestions = async (req, res) => {
+export const resetQuiz = async (req, res) => {
   try {
-    await query_run("DELETE FROM answered");
+    await query_run("UPDATE questions SET clicked = 'false'");
+    await query_run("UPDATE currentQuestion SET question = 'Awaiting question...', answer = '...' WHERE id = 1");
+    await query_run("UPDATE contestants SET score = 0");
     res.status(200).json({ message: "answered table reset" });
   } catch (error) {
     console.error(error);
